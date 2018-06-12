@@ -1,4 +1,4 @@
-package cc.ccoder.concurrency;
+package cc.ccoder.concurrency.examples;
 
 import cc.ccoder.concurrency.annoations.NotThreadSafe;
 import lombok.extern.slf4j.Slf4j;
