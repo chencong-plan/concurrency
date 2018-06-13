@@ -1,4 +1,4 @@
-package cc.ccoder.concurrency.examples;
+package cc.ccoder.concurrency.example.atomic;
 
 import cc.ccoder.concurrency.annoations.NotThreadSafe;
 import lombok.extern.slf4j.Slf4j;
@@ -7,11 +7,12 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Semaphore;
+import java.util.concurrent.atomic.LongAdder;
 
 
 @Slf4j
 @NotThreadSafe
-public class ConcurrencyTest {
+public class AtomicExample3 {
 
     /**
      * 请求总数
@@ -22,7 +23,7 @@ public class ConcurrencyTest {
      */
     private static int threadTotal = 200;
 
-    private static int count = 0;
+    private static LongAdder count = new LongAdder();
 
     public static void main(String[] args) throws Exception {
         ExecutorService executorService = Executors.newCachedThreadPool();
@@ -47,6 +48,6 @@ public class ConcurrencyTest {
     }
 
     private static void add() {
-        count++;
+        count.increment();
     }
 }

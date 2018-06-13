@@ -1,4 +1,4 @@
-package cc.ccoder.concurrency.controller;
+package cc.ccoder.concurrency;
 
 
 import lombok.extern.slf4j.Slf4j;
